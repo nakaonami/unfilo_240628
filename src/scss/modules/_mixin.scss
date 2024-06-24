@@ -1,0 +1,27 @@
+@charset "utf-8";
+$tb: 1300px;
+$sp: 767px;
+
+@mixin pc {
+  @media screen and (min-width: ($sp + 1)) {
+    @content;
+  }
+}
+
+@mixin pcxl {
+  @media screen and (min-width: ($tb + 1)) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: ($tb)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}

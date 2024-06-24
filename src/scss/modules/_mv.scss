@@ -1,0 +1,284 @@
+@charset "utf-8";
+@use './mixin' as *;
+@use './common' as *;
+
+.p-mv {
+  position: relative;
+
+  @include sp {
+    margin: 5.333333333vw;
+    height: 123.3333333vw;
+    background: $primaryColor;
+  }
+
+  .logo {
+    position: absolute;
+    width: 21rem;
+    margin: 0 auto;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-delay: 1.5s;
+
+    @include sp {
+      width: 28vw;
+      right: auto;
+      left: -1vw;
+      top: -1.333333vw;
+    }
+  }
+
+  &__bgImage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include sp {
+      display: block;
+    }
+
+    picture {
+      position: relative;
+
+      @include sp {
+        position: absolute;
+        width: calc(50% + 5.333333333vw);
+        opacity: 0;
+        animation: fadeIn 0.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+        animation-delay: 0.5s;
+      }
+
+      @include pc {
+        &::before {
+          position: absolute;
+          content: "";
+          background: #fff;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-delay: 0.5s;
+        }
+      }
+
+      &.l {
+        @include sp {
+          right: -5.333333333vw;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+      }
+
+      &.r {
+        @include sp {
+          left: -5.333333333vw;
+          bottom: 0;
+        }
+
+        &::before {
+          bottom: 0;
+        }
+      }
+    }
+
+    &.is-active {
+      picture {
+        &.l {
+          @include sp{
+            transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: 2.8s;
+            rotate: 8deg;
+          }
+          &::before {
+            height: 0;
+          }
+
+        }
+
+        &.r {
+          @include sp{
+            transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: 2.85s;
+            rotate: -8deg;
+          }
+          &::before {
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__catchText {
+    position: absolute;
+    width: 95.3125vw;
+    bottom: 2.083333333vw;
+    left: 2.34375vw;
+    z-index: 5;
+
+    @include sp {
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      height: 100%;
+    }
+
+    .txt01 {
+      position: absolute;
+      left: 0;
+      width: 35vw;
+      bottom: 5.66666667vw;
+      animation-delay: 1.5s;
+      animation-name: scale;
+      animation-duration: 0.4s;
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      will-change: transform;
+
+      @include sp {
+        width: 46.66666667vw;
+        bottom: 28.66666667vw;
+        left: auto;
+        right: 2vw;
+        animation-delay: 1.9s;
+      }
+    }
+
+    .txt02 {
+      position: absolute;
+      right: 0;
+      width: 76.640625vw;
+      bottom: 0;
+      animation-delay: 1.9s;
+      animation-name: slideIn;
+      animation-duration: 0.4s;
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      will-change: transform;
+
+      @include sp {
+        width: 54.93333333vw;
+        bottom: 2vw;
+        right: -2vw;
+        animation-delay: 2.2s;
+      }
+    }
+
+    .txt03 {
+      position: absolute;
+      left: 35.46875vw;
+      width: 19.6875vw;
+      bottom: 9.66666667vw;
+      animation-delay: 2.5s;
+      animation-name: fadeInLeft;
+      animation-duration: 0.5s;
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      will-change: transform;
+
+      @include sp {
+        bottom: auto;
+        top: 10.33333vw;
+        left: 5.333333vw;
+        width: 39.46666667vw;
+        animation-delay: 1.5s;
+      }
+    }
+  }
+
+  .slideIn {
+    will-change: clip-path;
+    -webkit-transition: -webkit-clip-path 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: -webkit-clip-path 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: clip-path 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: clip-path 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-clip-path 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-animation: slideIn 0.7s;
+    animation: slideIn 0.7s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s
+  }
+
+  .fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn 0.9s 0.9s forwards;
+    animation: fadeIn 0.9s 0.9s forwards
+  }
+}
+
+@keyframes clippath-top {
+  0% {
+    opacity: 0;
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-clip-path: inset(0);
+    clip-path: inset(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0)
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+
+  }
+}

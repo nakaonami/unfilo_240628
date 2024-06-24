@@ -1,0 +1,55 @@
+@charset "utf-8";
+@use 'mixin' as m;
+$font-base:  "Noto Sans JP", sans-serif;
+$font-mincho: "Shippori Mincho", serif;
+$font-en: "Montserrat", sans-serif;
+$baseColor: #000;
+$primaryColor:#FF9D64;
+$secondaryColor:#52B2FF;
+
+$leading-none: 1 !default;
+$leading-xxx-tight: 1.2 !default;
+$leading-xx-tight: 1.4 !default;
+$leading-x-tight: 1.4 !default;
+$leading-tight: 1.5 !default;
+$leading-snug: 1.6 !default;
+$leading-normal: 1.7 !default;
+$leading-relaxed: 1.8 !default;
+$leading-loose: 2 !default;
+
+$text-base-sp: 3.733333333vw;
+$text-f20-sp: 2.666666667vw;
+$text-f21-sp: 2.8vw;
+$text-f22-sp: 2.933333333vw;
+$text-f23-sp: 3.066666667vw;
+$text-f24-sp: 3.2vw;
+$text-f26-sp: 3.477777777vw;
+$text-f28-sp: 3.733333333vw;
+$text-f30-sp: 4vw;
+$text-f32-sp: 4.266666667vw;
+$text-f34-sp: 4.533333333vw;
+$text-f36-sp: 4.8vw;
+$text-f38-sp: 5.066666667vw;
+$text-f40-sp: 5.333333333vw;
+$text-f42-sp: 5.6vw;
+$text-f44-sp: 5.866666667vw;
+$text-f46-sp: 6.133333333vw;
+$text-f48-sp: 6.4vw;
+$text-f50-sp: 6.666666667vw;
+$text-f52-sp: 6.933333333vw;
+$text-f54-sp: 7.2vw;
+$text-f56-sp: 7.477777777vw;
+$text-f70-sp: 9.3333333vw;
+
+$text-base: clamp(1.4rem, 1.4vw, 1.5rem);
+$inner-sp: calc(100% - calc(5.33333vw * 2));
+$wmax1300: 1300px;
+$wmax1200: 1200px;
+$wmax1100: 1100px;
+$wmax1000: 1000px;
+$wmax920: 920px;
+$wmax800: 800px;
+
+$transition01: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+$transition02: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+$transition03: 1s cubic-bezier(0.19, 1, 0.22, 1);
