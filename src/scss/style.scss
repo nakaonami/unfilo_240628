@@ -104,7 +104,8 @@ about
           bottom: 0;
           height: 1.3rem;
           z-index: -1;
-          @include sp{
+
+          @include sp {
             height: 2rem;
           }
         }
@@ -112,6 +113,14 @@ about
     }
   }
 
+  &__movie{
+    width: 40.6rem;
+    height: 72rem;
+    margin: 10rem auto 0;
+    @include sp{
+      width: 40.6rem;
+    }
+  }
 }
 
 .p-styling {
@@ -125,7 +134,8 @@ about
     margin-top: -8vw;
     padding-top: 8vw;
     padding-bottom: 25.33333333vw;
-    &04{
+
+    &04 {
       padding-bottom: 8vw;
     }
   }
@@ -150,6 +160,7 @@ secret
 
     @include sp {
       width: 38rem;
+      margin: 5rem auto 9rem;
     }
 
     &::before,
@@ -191,22 +202,11 @@ secret
       left: 0;
       top: 0;
       width: 100%;
-      opacity: 0;
-      transform: scale(0.9);
     }
 
     .txt02 {
       position: relative;
       top: 0;
-    }
-
-    &.is-active {
-      .txt01 {
-        opacity: 1;
-        transform: scale(1);
-        transition: $transition01;
-        transition-delay: 0.8s;
-      }
     }
   }
 
@@ -266,14 +266,16 @@ secret
         .txt {
           position: relative;
           margin-top: -32.5rem;
-          opacity: 0;
           translate: 0 -2rem;
-          transition-delay: 1s;
           left: -1.5rem;
+          transform: translateY(10rem);
+          transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+
 
           @include sp {
             margin-top: 0;
             left: 0;
+            transform: translateY(0);
           }
         }
 
@@ -284,6 +286,7 @@ secret
           }
 
           .txt {
+            transform: translateY(0);
           }
         }
       }
@@ -329,14 +332,15 @@ secret
         .txt {
           position: absolute;
           margin-top: -52rem;
-          opacity: 0;
           translate: 0 -2rem;
-          transition-delay: 1s;
+          transform: translateY(10rem);
+          transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
           @include sp {
             position: relative;
             margin-top: 0;
             left: 0;
+            transform: translateY(0);
           }
         }
 
@@ -347,6 +351,7 @@ secret
           }
 
           .txt {
+            transform: translateY(0);
           }
         }
       }
@@ -446,8 +451,9 @@ title
   height: 9.4rem;
   margin-inline: auto;
   text-align: center;
-  @include sp{
-    height:7.5rem
+
+  @include sp {
+    height: 7.5rem
   }
 
 
@@ -483,6 +489,7 @@ title
         height: 3px;
         top: 0;
         left: 0;
+
         @include sp {
           height: 2px;
         }
@@ -495,6 +502,7 @@ title
         height: 90%;
         top: 0;
         left: 0;
+
         @include sp {
           width: 2px;
         }
@@ -507,6 +515,7 @@ title
         height: 3px;
         bottom: 0;
         right: 0;
+
         @include sp {
           height: 2px;
         }
@@ -555,17 +564,19 @@ title
 
     &_inner {
       padding: 1rem 2rem;
+
       &::before {
         left: 0.8rem;
         top: 0.8rem;
-    }
-      @include sp{
+      }
+
+      @include sp {
         padding: 0.6rem 1.5rem;
       }
 
       .line {
         &01 {
-          height: px;
+          height: 1px;
         }
 
         &02 {
@@ -1038,7 +1049,7 @@ style_variation
       width: 100%;
     }
 
-    
+
     &::before {
       position: absolute;
       content: "";
@@ -1052,6 +1063,7 @@ style_variation
         border-top: 1px solid $baseColor;
       }
     }
+
     &.is-active {
       picture {
         &::before {
